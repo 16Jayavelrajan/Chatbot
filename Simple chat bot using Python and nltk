@@ -1,0 +1,168 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPz9Tn3ua0vSRuDG58Tv4Py",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/16Jayavelrajan/Chatbot/blob/main/Simple%20chat%20bot%20using%20Python%20and%20nltk\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "yWMrF8tEDpv_"
+      },
+      "outputs": [],
+      "source": [
+        "# This is a chatbot program"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# import the library\n",
+        "from nltk.chat.util import Chat, reflections"
+      ],
+      "metadata": {
+        "id": "ELk4H0qCD9cC"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pairs = [\n",
+        "    ['My Name is (.*)',['Hi %1']],\n",
+        "    ['(hi|hello|hey|holla|hola)',['hey there','hi there','haayy']],\n",
+        "    ['(.*) in (.*) is fun',['%1 in %2 is indeed fun']],\n",
+        "    ['(.*)(location|city) ?',['Tokyo,Japan']],\n",
+        "    ['(.*)created you?',['Jayavel Rajan did using NLTK and python']],\n",
+        "    ['How is the weather in (.*)', ['The weather in %1 is Rainy ']],\n",
+        "    ['(.*)help (.*)',['I can help you ']],\n",
+        "    ['(.*) your name?',[' my name is NOBODY']],\n",
+        "    ['(.*) your creator from?',['He is from Chennai']],\n",
+        "    ['(.*) studying', ['He is studying Cloud Computing']],\n",
+        "    ['(.*) his favorite food?', ['His favorite food is Briyani']]\n",
+        "]\n"
+      ],
+      "metadata": {
+        "id": "rYMJQYRnEVlh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "reflections"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HPEpWR2rGMLu",
+        "outputId": "0ff06fef-cff3-42df-e27f-366af8c7a26b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'i am': 'you are',\n",
+              " 'i was': 'you were',\n",
+              " 'i': 'you',\n",
+              " \"i'm\": 'you are',\n",
+              " \"i'd\": 'you would',\n",
+              " \"i've\": 'you have',\n",
+              " \"i'll\": 'you will',\n",
+              " 'my': 'your',\n",
+              " 'you are': 'I am',\n",
+              " 'you were': 'I was',\n",
+              " \"you've\": 'I have',\n",
+              " \"you'll\": 'I will',\n",
+              " 'your': 'my',\n",
+              " 'yours': 'mine',\n",
+              " 'you': 'me',\n",
+              " 'me': 'you'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "chat = Chat(pairs,my_dummy_reflections)\n",
+        "# chat._substitute('You are amazing')\n",
+        "chat.converse()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 529
+        },
+        "id": "1bksED96EpdD",
+        "outputId": "9fa1fafb-5697-4820-a840-b6074456e987"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            ">where is your creator from?\n",
+            "He is from Chennai\n",
+            ">what is his favorite food?\n",
+            "His favorite food is Briyani\n",
+            ">where is he studying\n",
+            "He is studying Cloud Computing\n",
+            ">who created you?\n",
+            "Jayavel Rajan did using NLTK and python\n",
+            ">how is the weather in Tokyo\n",
+            "The weather in tokyo is Rainy \n",
+            ">How is the weather in chennai\n",
+            "The weather in chennai is Rainy \n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "KeyboardInterrupt",
+          "evalue": "Interrupted by user",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-60-d8b70c5b3e45>\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mchat\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mChat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpairs\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mmy_dummy_reflections\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;31m# chat._substitute('You are amazing')\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mchat\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mconverse\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.11/dist-packages/nltk/chat/util.py\u001b[0m in \u001b[0;36mconverse\u001b[0;34m(self, quit)\u001b[0m\n\u001b[1;32m    116\u001b[0m             \u001b[0muser_input\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mquit\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    117\u001b[0m             \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 118\u001b[0;31m                 \u001b[0muser_input\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\">\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    119\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mEOFError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    120\u001b[0m                 \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0muser_input\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36mraw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m   1175\u001b[0m                 \u001b[0;34m\"raw_input was called, but this frontend does not support input requests.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1176\u001b[0m             )\n\u001b[0;32m-> 1177\u001b[0;31m         return self._input_request(\n\u001b[0m\u001b[1;32m   1178\u001b[0m             \u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mprompt\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1179\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_ident\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"shell\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.11/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m   1217\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1218\u001b[0m                 \u001b[0;31m# re-raise KeyboardInterrupt, to truncate traceback\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1219\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Interrupted by user\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1220\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mException\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1221\u001b[0m                 \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlog\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwarning\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Invalid Message:\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mexc_info\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: Interrupted by user"
+          ]
+        }
+      ]
+    }
+  ]
+}
