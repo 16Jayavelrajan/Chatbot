@@ -1,1 +1,1 @@
-# Chatbot
+Hi My name is Jayavel, this is just a simple program in which i used python and nltk.NLTK (Natural Language Toolkit) is a powerful Python library used for Natural Language Processing (NLP). It provides easy-to-use interfaces to over 50 corpora and lexical resources (such as WordNet), along with a suite of text-processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning. i just want to learn this library in python so i used chat bot as an application. 
